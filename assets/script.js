@@ -23,4 +23,34 @@ $(document).ready(function () {
     $("#3PM .description").val(localStorage.getItem("3PM"));
     $("#4PM .description").val(localStorage.getItem("4PM"));
     $("#5PM .description").val(localStorage.getItem("5PM"));
+
+
+    function timeTracker() {
+
+        var currentTime = moment().hour();
+
+
+        $(".time-block").each(function () {
+            var hourBlock = parseInt($(this).attr("id").split("hour")[1]);
+            console.log(hourBlock, currentTime)
+
+
+            if (hourBlock < currentTime) {
+                $(this).addClass("then");
+                $(this).removeClass("now");
+                $(this).removeClass("later");
+            }
+            else if (hourBlock === currentTime) {
+                $(this).removeClass("then");
+                $(this).addClass("now");
+                $(this).removeClass("later");
+            }
+            else {
+                $(this).removeClass("then");
+                $(this).removeClass("now");
+                $(this).addClass("later");
+            }
+        })
+    }
+    timeTracker();
 })
