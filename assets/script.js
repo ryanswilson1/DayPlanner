@@ -44,3 +44,28 @@ function timeTracker() {
         }
     });
 };
+
+$(document).ready(function () {
+    $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
+    $(document).on("click", "button", function (event) {
+        event.preventDefault();
+        var word = $(this).siblings(".input").val();
+        var clock = $(this).siblings(".hour").text();
+        // console.log(word);
+        // console.log(clock);
+        localStorage.setItem(clock, word);
+        nine = localStorage.getItem("9AM") || "";
+        ten = localStorage.getItem("10AM") || "";
+        eleven = localStorage.getItem("11AM") || "";
+        twelve = localStorage.getItem("12PM") || "";
+        one = localStorage.getItem("1PM") || "";
+        two = localStorage.getItem("2PM") || "";
+        three = localStorage.getItem("3PM") || "";
+        four = localStorage.getItem("4PM") || "";
+        five = localStorage.getItem("5PM") || "";
+        fill();
+        timeTracker();
+    });
+    timeTracker();
+    fill();
+});
