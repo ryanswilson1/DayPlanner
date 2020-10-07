@@ -20,3 +20,27 @@ function fill() {
     $("#4PM").children(".input").val(four);
     $("#5PM").children(".input").val(five);
 };
+
+function timeTracker() {
+    var currentTime = moment().hour();
+    console.log(currentTime);
+    $(".time-block").each(function () {
+        var hourBlock = parseInt($(this).attr("id").split("hour")[1]);
+        console.log(hourBlock);
+        if (hourBlock < currentTime) {
+            $(this).addClass("then");
+            $(this).removeClass("now");
+            $(this).removeClass("later");
+        }
+        else if (hourBlock === currentTime) {
+            $(this).removeClass("then");
+            $(this).addClass("now");
+            $(this).removeClass("later");
+        }
+        else {
+            $(this).removeClass("then");
+            $(this).removeClass("now");
+            $(this).addClass("later");
+        }
+    });
+};
