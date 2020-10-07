@@ -24,7 +24,7 @@ function fill() {
 function timeTracker() {
     var currentTime = moment().hour();
     console.log(currentTime);
-    $(".time-block").each(function () {
+    $(".row time-line").each(function () {
         var hourBlock = parseInt($(this).attr("id").split("hour")[1]);
         console.log(hourBlock);
         if (hourBlock < currentTime) {
