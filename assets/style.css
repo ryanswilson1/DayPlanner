@@ -1,3 +1,11 @@
+input {
+  background: none;
+}
+
+h3 {
+  height: 100%;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -15,7 +23,7 @@ textarea{
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
+  background-color: gray;
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
@@ -43,18 +51,21 @@ textarea{
 }
 
 .then {
-  background-color: #d3d3d3;
-  color: white;
+  background-color: green;
+  color:green;
+  opacity: .7;
 }
 
 .now {
-  background-color: #ff6961;
-  color: white;
+  background-color: gray;
+  color: gray;
+  opacity: .7;
 }
 
 .later {
-  background-color: #77dd77;
-  color: white;
+  background-color: red;
+  color:red;
+  opacity: .7;
 }
 
 .saveBtn {
@@ -69,3 +80,13 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+.input
+  {
+    color: gray;
+  }
+
+  .col-lg-2
+  {
+    background-color: gray;
+  }
